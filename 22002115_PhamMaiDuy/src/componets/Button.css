@@ -1,0 +1,26 @@
+.color-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .color-button.red {
+    background-color: red;
+  }
+  
+  .color-button.blue {
+    background-color: blue;
+  }
+  
+  .color-button.black {
+    background-color: black;
+  }
+  
+  .color-button:hover {
+    opacity: 0.8;
+  }
+  
