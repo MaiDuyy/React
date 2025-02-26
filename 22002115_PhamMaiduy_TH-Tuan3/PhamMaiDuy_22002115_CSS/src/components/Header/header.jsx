@@ -3,7 +3,7 @@ import React from 'react'
 function Header() {
     return (
         <header className='bg-white shadow-md'>
-            <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div className="container mx-auto px-6 py-12 flex justify-between items-center h-10">
                 <div className='flex items-center'>
                     <a href="/"> 
                         <img src="../asset/logo.png" alt="Logo" />

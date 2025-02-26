@@ -1,41 +1,133 @@
-import React from 'react'
+import React from 'react';
 
-function footer() {
+const Footer = () => {
   return (
-    <div>
-
+    <footer className="bg-gray-900 text-white py-12 px-6 md:px-12">
+      <div className="container mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
         
+          <div className='w-130'>
+            <h3 className="text-lg font-semibold mb-4">About Us</h3>
+            <p className="text-gray-300 mb-4">
+              Welcome to our website, a wonderful place to explore and learn how to
+              cook like a pro.
+            </p>
+            <div className="flex items-center">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="bg-white text-gray-800 px-4 py-2 rounded-l w-full focus:outline-none"
+              />
+              <button className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-r transition duration-200">
+                Send
+              </button>
+            </div>
 
-<footer class="bg-white rounded-lg shadow-sm white:bg-gray-900 m-4">
-    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-        <div class="sm:flex sm:items-center sm:justify-between">
-            <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-                <img src="../asset/logo.png" class="h-8" alt="Flowbite Logo" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+            <div className="pt-26 flex items-center justify-between">
+          <div className="flex items-center mb-4 md:mb-0">
+            
+            <div>
+             <img src="../asset/logofter.png" alt="" />
+            </div>
+          </div>
+          <div className="text-gray-400 text-sm">
+            <span>2023 Chefify Company</span>
+            <span className="mx-3">|</span>
+            <a href="#" className="hover:text-white transition duration-200">
+              Terms of Service
             </a>
-            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
-                <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">About</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:underline">Contact</a>
-                </li>
-            </ul>
+            <span className="mx-2">|</span>
+            <a href="#" className="hover:text-white transition duration-200">
+              Privacy Policy
+            </a>
+          </div>
         </div>
-        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.</span>
-    </div>
-</footer>
+          </div>
+          
+    <div></div>
+    <div></div>
+       
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Learn More</h3>
+            <ul className="space-y-2">
+              <li>
+                <a href="#" className="text-gray-300 hover:text-white transition duration-200">
+                  Our Cooks
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-300 hover:text-white transition duration-200">
+                  See Our Features
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-300 hover:text-white transition duration-200">
+                  FAQ
+                </a>
+              </li>
+              <li className="pt-19">
+                <h3 className="text-lg font-semibold mb-2">Shop</h3>
+              </li>
+              <li>
+                <a href="#" className="text-gray-300 hover:text-white transition duration-200">
+                  Gift Subscription
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-300 hover:text-white transition duration-200">
+                  Send Us Feedback
+                </a>
+              </li>
+            </ul>
+          </div>
 
+   
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Recipes</h3>
+            <ul className="space-y-4">
+              <li>
+                <a href="#" className="text-gray-300 hover:text-white transition duration-200">
+                  What to Cook This Week
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-300 hover:text-white transition duration-200">
+                  Pasta
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-300 hover:text-white transition duration-200">
+                  Dinner
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-300 hover:text-white transition duration-200">
+                  Healthy
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-300 hover:text-white transition duration-200">
+                  Vegetarian
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-300 hover:text-white transition duration-200">
+                  Vegan
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-300 hover:text-white transition duration-200">
+                  Christmas
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-    </div>
-  )
-}
+       
+      </div>
+    </footer>
+  );
+};
 
-export default footer
+export default Footer;

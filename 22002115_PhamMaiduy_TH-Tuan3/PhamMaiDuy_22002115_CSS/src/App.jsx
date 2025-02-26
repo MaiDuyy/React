@@ -10,6 +10,9 @@ function App() {
   return (
     <>
     <Header/>
+   <div className='container mx-auto px-6 py-12'>
+    <img src="../asset/container.png" alt="" />
+   </div>
    <Footer/>
      </>
   );

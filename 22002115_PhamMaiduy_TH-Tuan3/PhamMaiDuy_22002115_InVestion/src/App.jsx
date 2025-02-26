@@ -74,7 +74,7 @@ function App() {
         />
         <br />
         <br />
-        <label htmlFor="goal">Goal (years)</label>
+        <label htmlFor="goal">Goal </label>
         <input
           type="number"
           id="goal"
