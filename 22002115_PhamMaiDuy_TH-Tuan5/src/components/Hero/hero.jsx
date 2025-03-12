@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Bookmark } from 'lucide-react'
-import { Menu } from 'lucide-react';
+
+import Sidebar from "../Sidebar/sidebar";
 function Hero() {
     const [product, setProduct] = useState([]);
 
@@ -17,27 +18,7 @@ function Hero() {
             <div className="container mx-auto px-6 py-12">
                 <div className="flex flex-col md:flex-row gap-8">
 
-                    <aside className="md:w-1/4 ">
-                     <div className="flex flex-auto">
-                     <Menu />
-                        <p className="text-lg font-semibold">FILLTERS</p>
-
-                     </div>
-            <div>
-                <h3 className="text-lg font-semibold mb-6 md-9">Type</h3>
-                <table>
-                    <tr>
-                        <td><input type="checkbox" name="" id="" /></td>
-                       
-                    </tr>
-                    <tr>
-                        <td>dfasd</td>
-                       
-                    </tr>
-                </table>
-            </div>
-
-                    </aside>
+                  <Sidebar/>
 
                 
 
