@@ -38,6 +38,8 @@ function EditUser() {
                 date: '',
                 status: ''
             });
+
+            
         } catch (err) {
             console.error("Error updating user:", err);
         } finally {

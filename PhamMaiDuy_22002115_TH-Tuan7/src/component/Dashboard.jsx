@@ -3,13 +3,14 @@ import { overView,columns,data } from '../utils/dataTable'
 import DataTable from 'react-data-table-component'
 import axios from 'axios';
 import EditUser from './EditUser';
+import { AddUserModal } from './AddUser';
 
 function Dashboard() {
     const [user, setUsers] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [tableData, setTableData] = useState(data);
-    
+    const [showAddModal, setShowAddModal] = useState(false);
     useEffect(() => {
         fetchUsers();
     }, []);
@@ -27,6 +28,20 @@ function Dashboard() {
         }
     };
 
+    const handleAddUser = async (formData) => {
+        try {
+            setIsLoading(true);
+            await axios.post("https://67c81bc40acf98d07084dff5.mockapi.io/api/header/tet", formData);
+            await fetchUsers(); 
+            setShowAddModal(false);
+            alert("Add User Successfully");
+        } catch (err) {
+            console.error("Error adding user:", err);
+            alert("Failed to add user");
+        } finally {
+            setIsLoading(false);
+        }
+    };
 
    
     return (
@@ -62,6 +77,13 @@ function Dashboard() {
                             <p className='font-bold text-xl'>Overview</p>
                         </div>
                         <div className='flex space-x-3'>
+                        <button 
+                                className='bg-pink-500 text-white flex items-center justify-center rounded-md px-6 py-2 hover:bg-pink-600 transition-colors shadow-md'
+                                onClick={() => setShowAddModal(true)}
+                            >
+                                <img src="src/asset/create.png" className='w-5 h-5 mr-2' alt="Add User" />
+                                <span className='font-medium'>Add New User</span>
+                            </button>
                             <button className='border border-pink-500 flex items-center justify-center rounded-md px-4 py-2 hover:bg-pink-50 transition-colors'>
                                 <img src="src/asset/Download.png" className='w-5 h-5 mr-2' alt="Import" />
                                 <span className='text-pink-500'>Import</span>
@@ -94,6 +116,14 @@ function Dashboard() {
                         <p className='font-bold text-xl'>Detail Report</p>
                     </div>
                     <EditUser/>
+
+                    {showAddModal && (
+                        <AddUserModal
+                            onClose={() => setShowAddModal(false)}
+                            onSave={handleAddUser}
+                        />
+                    )}
+
 
                     <div className="mt-4">
                         <DataTable
