@@ -1,10 +1,30 @@
 import React, { useEffect, useState } from 'react'
-import {   overView } from '../utils/dataTable'
-
+import { overView,columns,data } from '../utils/dataTable'
+import DataTable from 'react-data-table-component'
+import axios from 'axios';
 
 function Dashboard() {
-  
+    const [user, setUsers] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+    const [tableData, setTableData] = useState(data);
+    
+    useEffect(() => {
+        fetchUsers();
+    }, []);
 
+    const fetchUsers = async () => {
+        try {
+            setIsLoading(true);
+            const response = await axios.get("https://67c81bc40acf98d07084dff5.mockapi.io/api/header/tet");
+            setUsers(response.data);
+            setTableData(response.data);
+        } catch (err) {
+            console.error("Error fetching users:", err);
+        } finally {
+            setIsLoading(false);
+        }
+    };
     return (
         <div className="min-h-screen bg-gray-50">
             <header className='flex justify-between shadow h-16 items-center px-6 bg-white'>
@@ -65,8 +85,35 @@ function Dashboard() {
                             </div>
                         ))}
                     </div>
+                    <div className='flex items-center space-x-2 py-4 border-t'>
+                        <img src="src/asset/dashbroad.png" alt="Dashboard" />
+                        <p className='font-bold text-xl'>Detail Report</p>
+                    </div>
 
-                   </div>
+
+                    <div className="mt-4">
+                        <DataTable
+                            columns={columns}
+                            data={tableData}
+                            pagination
+                            highlightOnHover
+                            responsive
+                            progressPending={isLoading}
+                            progressComponent={<div className="text-center py-4">Loading...</div>}
+                            selectableRows
+                            fixedHeader
+                            paginationPerPage={10}
+                            paginationRowsPerPageOptions={[10, 25, 50, 100]}
+                            customStyles={{
+                                table: {
+                                    style: {
+                                        minHeight: '400px'
+                                    }
+                                }
+                            }}
+                        />
+                    </div>
+                </div>
             </main>
         </div>
     )
