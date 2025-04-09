@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { overView,columns,data } from '../utils/dataTable'
 import DataTable from 'react-data-table-component'
 import axios from 'axios';
+import EditUser from './EditUser';
 
 function Dashboard() {
     const [user, setUsers] = useState([]);
@@ -25,6 +26,9 @@ function Dashboard() {
             setIsLoading(false);
         }
     };
+
+
+   
     return (
         <div className="min-h-screen bg-gray-50">
             <header className='flex justify-between shadow h-16 items-center px-6 bg-white'>
@@ -89,7 +93,7 @@ function Dashboard() {
                         <img src="src/asset/dashbroad.png" alt="Dashboard" />
                         <p className='font-bold text-xl'>Detail Report</p>
                     </div>
-
+                    <EditUser/>
 
                     <div className="mt-4">
                         <DataTable
