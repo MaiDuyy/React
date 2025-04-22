@@ -5,7 +5,6 @@ import { increment, decrement, reset } from './actions/actions';
 const Redux = () => {
   const count = useSelector((state) => state.count);
   const dispatch = useDispatch();
-
   const handleInc = () => dispatch(increment());
   const handleDecre = () => dispatch(decrement());
   const handleReset = () => dispatch(reset());

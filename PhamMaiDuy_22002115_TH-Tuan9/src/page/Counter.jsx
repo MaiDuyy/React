@@ -14,7 +14,6 @@ function Counter() {
         <h1 className='text-4xl font-bold'>Counter Redux ToolKit</h1>
         <h2 className='mb-2 text-xl font-semibold text-blue-500' >Counter: {count}</h2>
         <div className='space-x-4 '>
-
           <button className='bg-blue-500 text-white px-4 py-2 mx-2 rounded-md hover:bg-blue-400 duration-300' onClick={() => dispatch(increment())}>+</button>
           <button className='bg-red-500 text-white px-4 py-2 mx-2 rounded-md hover:bg-red-300 duration-300 drop-shadow-amber-100' onClick={() => dispatch(decrement())}>-</button>
           <button className='bg-green-500 text-white px-4 py-2 mx-2 rounded-md hover:bg-green-300 duration-300 drop-shadow-amber-100' onClick={() => dispatch(rest())}>Rest</button>

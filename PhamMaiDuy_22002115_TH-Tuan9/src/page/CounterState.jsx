@@ -7,7 +7,6 @@ function CounterState() {
     const decrement = () => setCount(count - 1);
     const reset = () => setCount(0);
 
-    
     return (
       <div className='max-w-xl mx-auto px-4 border flex items-center justify-center h-50 bg-gray-200 text-center mt-10 rounded-md'>
   

@@ -14,7 +14,6 @@ function reducer (state , action) {
             throw new Error () 
         }
 }
-
 function CounterReducer() {
     const [state , dispatch] = useReducer(reducer, initialState);
     const increment = () => dispatch({type : 'cong'})

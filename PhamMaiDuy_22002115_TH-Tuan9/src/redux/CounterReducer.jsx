@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+
 import { INCREMENT, DECREMENT, RESET } from './actions/actionTypes';
 
 const initialState = {
