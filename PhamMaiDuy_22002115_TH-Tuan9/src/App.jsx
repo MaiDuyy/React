@@ -8,8 +8,11 @@ import { Provider } from 'react-redux'
 // import store from './redux/store.js'
 // import  store  from './todo/store.js'
 import TodoApp from './todo/TodoApp.jsx'
-import { store } from './shoppingcart/store.js'
+// import { store } from './shoppingcart/store.js'
+
 import ShoppingCart from './shoppingcart/ShoppingCart.jsx'
+import { store } from './auth/store.js'
+import AuthLogin from './auth/AuthLogin.jsx'
 function App() {
   
 
@@ -22,7 +25,8 @@ function App() {
       <Provider store={store}>
       {/* <Redux/> */}
       {/* <TodoApp/> */}
-      <ShoppingCart/>
+      {/* <ShoppingCart/> */}
+      <AuthLogin/>
       </Provider>
 
       
